@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Cài đặt giá trị mặc định cho bài Jingle Bells (đầy đủ)
+    // Jingle Bells
     sequenceInput.value = 'ddd ddd dgad d ffff fddd ddsd g ddd ddd dgad d ffff fddd ggfs a';
     
     // Cài đặt tốc độ mặc định là 400ms
