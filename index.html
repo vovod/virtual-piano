@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Piano</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Virtual Piano</h1>
+        
+        <div class="sequence-player">
+            <div class="sequence-form">
+                <label for="sequence-input">Nhập chuỗi phím:</label>
+                <textarea id="sequence-input" rows="3" placeholder="Nhập chuỗi phím hoặc chơi bài Jingle Bells đã có sẵn"></textarea>
+            </div>
+            <div class="sequence-controls">
+                <button id="play-sequence" class="btn">Chơi nhạc</button>
+                <label for="play-speed">Tốc độ phát:</label>
+                <input type="range" id="play-speed" min="50" max="500" step="10" value="200">
+                <span id="speed-value">200ms</span>
+            </div>
+        </div>
+        
+        <div class="piano">
+            <div class="keys">
+                <!-- Các phím đàn sẽ được tạo bằng JavaScript -->
+            </div>
+        </div>
+        <div class="controls">
+            <div class="volume-control">
+                <label for="volume">Âm lượng:</label>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+            </div>
+            <div class="instrument-select">
+                <label for="instrument">Nhạc cụ:</label>
+                <select id="instrument">
+                    <option value="0">Piano</option>
+                    <option value="1">Organ</option>
+                    <option value="2">Acoustic Guitar</option>
+                    <option value="3">EDM</option>
+                </select>
+            </div>
+        </div>
+        <div class="keyboard-help">
+            <h2>Hướng dẫn sử dụng bàn phím</h2>
+            <div class="keyboard-map">
+                <div class="octave-group">
+                    <h3>Octave 4</h3>
+                    <p>Phím trắng: A (C4), S (D4), D (E4), F (F4), G (G4), H (A4), J (B4)</p>
+                    <p>Phím đen: W (C#4), E (D#4), T (F#4), Y (G#4), U (A#4)</p>
+                </div>
+                <div class="octave-group">
+                    <h3>Octave 5</h3>
+                    <p>Phím trắng: K (C5), L (D5), ; (E5), Z (F5), X (G5), C (A5), V (B5)</p>
+                    <p>Phím đen: O (C#5), P (D#5), R (F#5), I (G#5), [ (A#5)</p>
+                </div>
+                <div class="octave-group">
+                    <h3>Octave 6</h3>
+                    <p>Phím trắng: B (C6), N (D6), M (E6), , (F6), . (G6), / (A6), 0 (B6)</p>
+                    <p>Phím đen: = (C#6), Q (D#6), ! (F#6), @ (G#6), # (A#6)</p>
+                </div>
+                <div class="octave-group">
+                    <h3>Octave 7</h3>
+                    <p>Phím trắng: 1 (C7), 2 (D7), 3 (E7), 4 (F7), 5 (G7), 6 (A7), 7 (B7)</p>
+                    <p>Phím đen: $ (C#7), % (D#7), ^ (F#7), & (G#7), * (A#7)</p>
+                </div>
+            </div>
+            <p class="note">Lưu ý: Một số ký tự đặc biệt như !, @, #, $, %, ^ yêu cầu nhấn Shift + phím số tương ứng</p>
+        </div>
+        
+        <div class="key-history">
+            <h2>Lịch sử phím đã nhấn</h2>
+            <div id="key-history-container"></div>
+        </div>
+    </div>
+
+    <script src="js/audiosynth.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
