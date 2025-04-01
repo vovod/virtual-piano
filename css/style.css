@@ -275,20 +275,31 @@ select {
     color: white;
 }
 
+.scroll-hint {
+    display: none;
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+/* Mobile-specific styles */
 @media (max-width: 900px) {
     .keyboard-map {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 600px) {
-    .keyboard-map {
-        grid-template-columns: 1fr;
-    }
-}
-
 @media (max-width: 768px) {
+    /* Apply scrolling only on mobile */
+    .piano {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
     .keys {
+        min-width: 1200px; /* Only apply fixed width on mobile */
         height: 140px;
     }
     
@@ -308,5 +319,62 @@ select {
     
     .keyboard-help {
         font-size: 12px;
+    }
+    
+    /* Show scroll hint on mobile */
+    .scroll-hint {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .keyboard-map {
+        grid-template-columns: 1fr;
+    }
+
+    .sequence-player {
+        padding: 15px;
+    }
+
+    .sequence-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sequence-controls > * {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .volume-control, .instrument-select {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    input[type="range"] {
+        width: 65%;
+    }
+
+    .keyboard-help, .key-history {
+        padding: 15px;
+        font-size: 13px;
     }
 }
